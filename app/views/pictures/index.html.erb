@@ -1,0 +1,22 @@
+<h2>view post</h2>
+
+
+<table class="col-md-6 col-xs-12">
+    <tr>
+      <th>タイトル</th>
+    </tr>
+  <% @pictures.each do |picture| %>
+    <tr>
+      <td><%= picture.title %></td>
+      <td><%= link_to 'show', picture_path(picture.id), class:"btn btn-success" %></td>
+      <% if picture.user_id == current_user.id %>
+      <td><%= link_to 'edit', edit_picture_path(picture.id),class:"btn btn-warning" %></td>
+      <td><%= link_to 'delete', picture_path(picture.id),method: :delete, class:"btn btn-danger",data: { confirm: '本当に削除していいですか？' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  <tr>
+  <td><%= link_to '投稿する', new_picture_path, class:"btn btn-primary" %></td>
+  </tr>
+
+</table>
