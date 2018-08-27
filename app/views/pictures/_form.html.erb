@@ -10,19 +10,29 @@
     </lu>
   </div>
 <% end %>
+<table>
+  <tr>
+    <td><%= form.label :title %></td>
+    <td><%= form.text_field :title %></td>
+  </tr>
 
-<%= form.label :title %>
-<%= form.text_field :title %>
+  <tr>
+    <td><%= form.label :content %></td>
+    <td><%= form.text_field :content %></td>
+  </tr>
 
-<%= form.label :content %>
-<%= form.text_field :content %>
-
-<%= form.label :image %>
-<%= image_tag(@picture.image.url) if @picture.image.url %>
-<%= form.file_field :image %>
-<br>
-<%= form.submit(["投稿する"])%>
-
-<% end %>
+  <tr>
+    <td><%= form.label :image %></td>
+    <td><%= image_tag(@picture.image.url) if @picture.image.url %></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td><%= form.file_field :image %></td>
+  </tr>
+    <br>
+    <td><%= form.submit(["投稿する"])%></td>
+</table>
+        <% end %>
 
 <%= link_to '戻る',pictures_path %>

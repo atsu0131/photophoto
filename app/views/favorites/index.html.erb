@@ -10,5 +10,6 @@
   <tr>
     <td><%= favorite.user.name %></td>
     <td><%= favorite.content %></td>
+    <td><%= link_to 'show', picture_path(favorite.id), class:"btn btn-success" %></td>
   </tr>
   <% end %>

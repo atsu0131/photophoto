@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(pictures_params)
     @picture.user_id = current_user.id
     if @picture.save
+      ContactMailer.contact_mail(@picture).deliver
       redirect_to pictures_path
     else
       render 'new'
