@@ -3,10 +3,12 @@
 
 <table class="col-md-6 col-xs-12">
     <tr>
+      <th>投稿者</th>
       <th>タイトル</th>
     </tr>
   <% @pictures.each do |picture| %>
     <tr>
+      <td><%= picture.user.name %></td>
       <td><%= picture.title %></td>
       <td><%= link_to 'show', picture_path(picture.id), class:"btn btn-success" %></td>
       <% if picture.user_id == current_user.id %>

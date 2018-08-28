@@ -3,11 +3,11 @@
   <div id="error_explanation">
     <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
 
-    <lu>
+    <ul>
       <% @picture.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-    </lu>
+    </ul>
   </div>
 <% end %>
 <table>
